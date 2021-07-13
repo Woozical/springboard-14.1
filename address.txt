@@ -1,0 +1,21 @@
+
+; <<>> DiG 9.16.1-Ubuntu <<>> https://icanhazdadjoke.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 54547
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 29277fa24aa5d89b0100000060ecf88dffe2d01d94821cb5 (good)
+;; QUESTION SECTION:
+;https://icanhazdadjoke.com.	IN	A
+
+;; AUTHORITY SECTION:
+com.			900	IN	SOA	a.gtld-servers.net. nstld.verisign-grs.com. 1626142839 1800 900 604800 86400
+
+;; Query time: 40 msec
+;; SERVER: 172.29.32.1#53(172.29.32.1)
+;; WHEN: Mon Jul 12 19:21:00 PDT 2021
+;; MSG SIZE  rcvd: 159
+
