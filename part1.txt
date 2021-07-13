@@ -1,0 +1,76 @@
+What is HTTP?
+
+HTTP is a communication protocol for sending and receiving data across the web. It provides a standard
+for client and server machines to communicate and exchange informaton.
+
+What is a URL?
+
+A URL is a path to a particular resource on a network. The layout of a url varies depending on what protocol
+is specified. For instance, using 'file:' protocol, the URL is a file path in the client's local file system;
+whereas a URL using 'http' protocol references a server on a (usually external) network.
+
+What is DNS?
+
+DNS is a system for converting human-readable 'domains' (e.g. 'google.com', 'springboard.com') into the corresponding
+IP address (e.g. '142.250.68.46') for the server that the client is trying to reach. DNS information may be cached on
+the client's machine or it's local network; or it may need to be looked up on dedicated DNS servers or DNS servers
+provided by the client's Internet Service Provider.
+
+What is a query string?
+
+A query string is information appended to a URL, which sends data alongside the client's request to the server
+to instruct it on how to serve the response back to the client.
+
+What are two HTTP verbs and how are they different?
+
+GET requests are requests sent to a server in which the client only needs to receive information - no data is affected on the server.
+E.g.: Retrieve a web page, submit a search form
+POST requests are requests sent by a client that intend to change or affect data server-side.
+E.g.: Modify your user account, submit a post to a forum thread
+
+What is an HTTP request?
+
+An HTTP request is a message sent by a client machine to a server machine, requesting some resource. The message adheres to
+Hypertext Transfer Protocol, allowing the server to interpret the request with no ambiguity. For example, when a user inputs
+'http://facebook.com' into their browser, they send an HTTP request for the resource located at that URL.
+
+What is an HTTP response?
+
+An HTTP response is a message, often including data, sent by a server in response to a client's HTTP request. In the above example,
+Facebook's server receives the HTTP request sent by the client, examines all of the information therein, and then determines which
+resource located on the server to send back to the client in response. In this case, Facebook's server returns the HTML document
+for their website's landing page.
+
+What is an HTTP header? Give a couple examples of request and response headers you have seen.
+
+An HTTP header provides additional information alongside HTTP requests and responses. Request headers provide information regarding
+the resource the client wants, or information about the client. Response headers provide information about the server's response
+
+':method' is a request header, e.g. GET or POST (see above)
+'accept': tells the server what type of files the client is expecting in response to the request, for instance
+a request to an API may only accept 'application/xml' or 'application/json'.
+'date': provides information on the date and time in which the message was created.
+'content-length': provides information on the size of the message body, in bytes.
+
+
+What are the processes that happen when you type “http://somesite.com/some/page.html” into a browser?
+
+The browser parses what is typed in the address bar to determine what the user wants to do.
+'http:' indicates it should make an HTTP GET request for the resource located at the hostname:
+'somesite.com', specifically, the resource '/some/page.html'.
+
+'somesite.com' is converted into the IP address for the server via the DNS.
+
+The browser sends the GET request to that IP address, indicating that it is looking for the resource
+'some/page.html'. The browser also automatically populates some other request headers in the message.
+
+The server at the IP address for 'somesite.com' receives the client's request. It examines the message's headers and body
+to formulate its response. It sees that the client wants the '/some/page.html' resource.
+Assuming a simple http server, the server gets the file 'page.html' in the '/root/some/' directory of its file system.
+Assuming the resource exists, page.html is part of the message body of the server's HTTP response, and the server sets the status
+code header to 200, among other headers.
+
+The client's browser receives 'page.html'. If there are other resources needed, such as .css files, images, .js files, etc,
+it makes separate requests for all of those resources.
+
+Once all resources are loaded, the browser renders the html document to the viewport.
