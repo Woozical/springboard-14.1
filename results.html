@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <p id='name'></p>
+    <p id='animal'></p>
+    <p id='icecream'></p>
+    <script>
+        /*
+        const urlParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlParams.entries());
+        console.log(urlParams);
+        console.log(params);
+        */
+
+        const parsedUrl = new URL(window.location.href);
+        const {myName, favAnimal, icecream} = Object.fromEntries(parsedUrl.searchParams.entries());
+
+        const nameRes = document.querySelector('#name');
+        const animalRes = document.querySelector('#animal');
+        const icecreamRes = document.querySelector('#icecream');
+
+        nameRes.innerText = `Your Name is: ${myName}`;
+        animalRes.innerText = `Your Favorite Animal is: ${favAnimal}`;
+        icecreamRes.innerText = `Do you want ice cream? ${icecream.toUpperCase()}!!!`;
+    </script>
+</body>
+</html>
